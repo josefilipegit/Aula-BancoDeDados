@@ -1,5 +1,9 @@
+-- Criando Banco de dados
+
 create database BD_Empresa
 use BD_Empresa
+
+-- Criando Tabela
 
 CREATE TABLE Tabela_Departamento (
 CODDEPARTAMENTO INT NOT NULL,
@@ -8,13 +12,19 @@ RAMAL CHAR(4),
 LOCALIZACAO CHAR(9)
 );
 
+-- Testando Tabela
+
 describe Tabela_departamento;
 select * from Tabela_departamento;
+
+-- Inserindo dado teste
 
 insert into tabela_departamento
 (CODDEPARTAMENTO, NOME_DEPARTAMENTO, RAMAL, LOCALIZACAO)
 values
 (1, 'VENDAS', '8501', 'TÉRREO')
+
+-- Repetindo exercício
 
 create DATABASE BD_LOJA;
 use BD_LOJA;
@@ -47,3 +57,21 @@ NOME VARCHAR (40) NOT NULL,
 CARGO VARCHAR (20)
 );
 DESCRIBE FUNCIONARIO;
+
+-- Aula 6
+-- Recriando tabela cadfun
+
+CREATE DATABASE bd_virtual
+use bd_virtual
+
+CREATE TABLE cadfun (
+CODFUN INT NOT NULL,
+NOME VARCHAR(40) NOT NULL,
+DEPTO CHAR(2),
+FUNCAO CHAR(20),
+SALARIO DECIMAL(10, 2)
+);
+
+-- Exercício seleção
+
+Select NOME, FUNCAO FROM cadfun
