@@ -124,14 +124,20 @@ ORDER BY NOME;
 SELECT * FROM cadfun
 WHERE FUNCAO = 'DIRETOR';
 
--- Atividade Parte 1
+-- Atividade Parte 1 - aula 6
 
+-- 1) Funcionarios dpto 4
 SELECT CODFUN, NOME FROM cadfun;
+WHERE DEPTO = '4'
 
+-- 2) Salarios distintos
 SELECT DISTINCT SALARIO FROM cadfun;
 
+-- 3) Nome e departamento ordem alfabetica
 SELECT NOME, DEPTO FROM cadfun
 ORDER BY DEPTO;
 
+-- 4) Analistas do menor para o maior salario
 SELECT * from cadfun
-WHERE FUNCAO = 'ANALISTA';
+WHERE FUNCAO = 'ANALISTA'
+ORDER BY SALARIO;
