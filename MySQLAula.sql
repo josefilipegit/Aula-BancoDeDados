@@ -60,7 +60,6 @@ DESCRIBE FUNCIONARIO;
 
 -- Aula 6
 -- Recriando tabela cadfun
-
 CREATE DATABASE bd_virtual
 use bd_virtual
 
@@ -71,8 +70,8 @@ DEPTO CHAR(2),
 FUNCAO CHAR(20),
 SALARIO DECIMAL(10, 2)
 );
--- Reinserindo dados pra ficar mais facil
 
+-- Reinserindo dados pra ficar mais facil
 INSERT INTO cadfun
 (CODFUN, NOME, DEPTO, FUNCAO, SALARIO)
 VALUES
@@ -141,3 +140,52 @@ ORDER BY DEPTO;
 SELECT * from cadfun
 WHERE FUNCAO = 'ANALISTA'
 ORDER BY SALARIO;
+
+-- Exemplo operacao aritmetica adicao
+SELECT SALARIO + 100 FROM cadfun;
+
+-- Nomeando tabela
+SELECT NOME, SALARIO,
+SALARIO * 1.2,
+SALARIO * 1.2 AS SALARIO_REAJUSTADO
+FROM cadfun;
+
+select (2 + 3) * 5;
+
+-- operadores lógicos
+SELECT NOME, SALARIO FROM cadfun
+WHERE SALARIO <= 1700;
+
+SELECT NOME, SALARIO FROM cadfun
+WHERE SALARIO > 1700 + 50;
+
+SELECT NOME, FUNCAO FROM cadfun
+WHERE FUNCAO <> 'VENDEDOR';
+
+SELECT * FROM cadfun
+WHERE (DEPTO = '3') AND (FUNCAO = 'VENDEDOR');
+
+SELECT * FROM cadfun
+WHERE NOT (FUNCAO = 'VENDEDOR');
+
+SELECT NOME, DEPTO, SALARIO FROM cadfun
+WHERE (DEPTO= '2' OR DEPTO = '3')
+AND SALARIO > 1500;
+
+-- Atividade da parte 2 - aula 6
+-- 1) DESCONTO 8%
+SELECT NOME, SALARIO,
+SALARIO * 0.92 AS SALARIO_LIQUIDO
+FROM cadfun;
+
+-- 2) QUEM GANHA MENOS DE 1100
+SELECT NOME, SALARIO FROM cadfun
+WHERE SALARIO < '1100';
+
+-- 3) LISTE TECNICOS DEPARTAMENTO 5
+SELECT * FROM cadfun
+WHERE DEPTO = '5' AND FUNCAO = 'TECNICO'
+
+-- 4) NÃO DEPTO 3 COM NOME E DEPTO
+SELECT NOME, DEPTO FROM cadfun
+WHERE NOT DEPTO = '3'
